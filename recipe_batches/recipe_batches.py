@@ -3,7 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = 100000000
+  for x in recipe.keys():
+    if x in ingredients.keys() and ingredients[x] // recipe[x]  < batches:
+      batches = ingredients[x] // recipe[x]
+    elif x not in ingredients.keys():
+      batches = 0
+      break
+  return batches
+
+
+
+
 
 
 if __name__ == '__main__':
